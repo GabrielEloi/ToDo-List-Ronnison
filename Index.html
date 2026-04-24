@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study ToDo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOGIN -->
+<section class="screen active">
+    <div id="login" class="screen active">
+        <h1>Estude!</h1>
+        <input type="text" placeholder="Usuario" id="user" />
+        <input type="password" placeholder="Senha" />
+        <button onclick="goTo('home'); requestName();"  >Entrar</button>
+    </div>
+</section>
+    
+<!-- HOME -->
+<div id="home" class="screen">
+  <header>
+    <h2 id="welcome"></h2>
+    <p>24 Abril</p>
+  </header>
+
+  <div class="card foco" id="foco">
+    <h3>Foco do dia</h3>
+    <button onclick="goTo('focus')" id="startTimer">Começar</button>
+  </div>
+
+  <div id="taskList"></div>
+
+  <button class="fab" onclick="goTo('create')">+</button>
+</div>
+
+<!-- CRIAR TAREFA -->
+<div id="create" class="screen">
+  <h2><strong>Nova Tarefa</strong></h2>
+  <input id="taskTitle" placeholder="Título" />
+  <button onclick="addTask()">Salvar</button>
+  <button onclick="goTo('home')">Voltar</button>
+</div>  
+
+<!-- MODO FOCO -->
+<div id="focus" class="screen">
+  <h2 id="focusTask">Estudar</h2>
+  <div id="timer">25:00</div>
+  <button onclick="startTimer()" id="principal">Iniciar</button>
+  <button onclick="goTo('home')">Sair</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
